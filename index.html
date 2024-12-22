@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="slider-container">
+        <div class="slide">
+            <video src="video1.mp4" autoplay muted loop></video>
+            <div class="slide-text">
+                <p>RACING</p>
+                <h1>SCUDERIA FERRARI</h1>
+                <p>DISCOVER</p>
+            </div>
+        </div>
+        <div class="slide">
+            <video src="video2.mp4" autoplay muted loop></video>
+            <div class="slide-text">
+                <p>COLLECTIONS</p>
+                <h1>HOLIDAY SEASON</h1>
+                <p>DISCOVER FERRARI GIFTS</p>
+            </div>
+        </div>
+        <div class="slide">
+            <video src="video3.mp4" autoplay muted loop></video>
+            <div class="slide-text">
+                <p>SPORTS CARS</p>
+                <h1>START YOUR ENGINE</h1>
+                <p>DISCOVER THE FERRARI LINE UP</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Ferrari Logo">
+        </div>
+        
+            <a href="#">RACING</a>
+            <a href="#">SPORTS CARS</a>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">EXPERIENCES</a>
+            <a href="#">ABOUT US</a>
+        
+    </nav>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length; 
+            showSlide(currentSlide);
+        }, 5000); 
+
+        showSlide(currentSlide); 
+    </script>
+     
+</body>
+</html>
